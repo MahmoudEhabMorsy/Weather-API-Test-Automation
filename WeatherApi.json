@@ -1,0 +1,1170 @@
+{
+  "info": {
+    "_postman_id": "10f3a870-ab2b-4a44-a0a7-da8b0dad3c75",
+    "name": "Task 4",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "50452057",
+    "_collection_link": "https://go.postman.co/collection/50452057-10f3a870-ab2b-4a44-a0a7-da8b0dad3c75?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Current Weather",
+      "item": [
+        {
+          "name": "City",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "\r",
+                  "pm.test(\"Status code is 200\", function () {\r",
+                  "    pm.response.to.have.status(200);\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"Body matches string\", function () {\r",
+                  "    pm.expect(pm.response.json().location.tz_id).to.eql(\"Europe/Vienna\");\r",
+                  "});\r",
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "key",
+                  "type": "string"
+                },
+                {
+                  "key": "in",
+                  "value": "query",
+                  "type": "string"
+                },
+                {
+                  "key": "value",
+                  "value": "{{vault:apiKey}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/current.json?q={{cityName}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "current.json"
+              ],
+              "query": [
+                {
+                  "key": "q",
+                  "value": "{{cityName}}"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Coordinates",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {\r",
+                  "    pm.response.to.have.status(200);\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"Body matches string\", function () {\r",
+                  "    pm.expect(pm.response.json().location.tz_id).to.eql(\"Europe/Vienna\");\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "key",
+                  "type": "string"
+                },
+                {
+                  "key": "in",
+                  "value": "query",
+                  "type": "string"
+                },
+                {
+                  "key": "value",
+                  "value": "{{vault:apiKey}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/current.json?q={{coords}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "current.json"
+              ],
+              "query": [
+                {
+                  "key": "q",
+                  "value": "{{coords}}"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Zip Code",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {\r",
+                  "    pm.response.to.have.status(200);\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"Body matches string\", function () {\r",
+                  "    pm.expect(pm.response.json().location.tz_id).to.eql(\"Europe/Vienna\");\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "key",
+                  "type": "string"
+                },
+                {
+                  "key": "in",
+                  "value": "query",
+                  "type": "string"
+                },
+                {
+                  "key": "value",
+                  "value": "{{vault:apiKey}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/current.json?q={{zipCode}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "current.json"
+              ],
+              "query": [
+                {
+                  "key": "q",
+                  "value": "{{zipCode}}"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Metar Code",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {\r",
+                  "    pm.response.to.have.status(200);\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"Body matches string\", function () {\r",
+                  "    pm.expect(pm.response.json().location.tz_id).to.eql(\"Europe/Vienna\");\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "key",
+                  "type": "string"
+                },
+                {
+                  "key": "in",
+                  "value": "query",
+                  "type": "string"
+                },
+                {
+                  "key": "value",
+                  "value": "{{vault:apiKey}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/current.json?q={{metarCode}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "current.json"
+              ],
+              "query": [
+                {
+                  "key": "q",
+                  "value": "{{metarCode}}"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Iata Code",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {\r",
+                  "    pm.response.to.have.status(200);\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"Body matches string\", function () {\r",
+                  "    pm.expect(pm.response.json().location.tz_id).to.eql(\"Europe/Vienna\");\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "key",
+                  "type": "string"
+                },
+                {
+                  "key": "in",
+                  "value": "query",
+                  "type": "string"
+                },
+                {
+                  "key": "value",
+                  "value": "{{vault:apiKey}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/current.json?q={{iataCode}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "current.json"
+              ],
+              "query": [
+                {
+                  "key": "q",
+                  "value": "{{iataCode}}"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Ip Address",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {\r",
+                  "    pm.response.to.have.status(200);\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"Body matches string\", function () {\r",
+                  "    pm.expect(pm.response.json().location.tz_id).to.eql(\"Europe/Vienna\");\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "key",
+                  "type": "string"
+                },
+                {
+                  "key": "in",
+                  "value": "query",
+                  "type": "string"
+                },
+                {
+                  "key": "value",
+                  "value": "{{vault:apiKey}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/current.json?q={{ipAddress}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "current.json"
+              ],
+              "query": [
+                {
+                  "key": "q",
+                  "value": "{{ipAddress}}"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Country",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {\r",
+                  "    pm.response.to.have.status(200);\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"Body matches string\", function () {\r",
+                  "    pm.expect(pm.response.json().location.tz_id).to.eql(\"Europe/Vienna\");\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "key",
+                  "type": "string"
+                },
+                {
+                  "key": "in",
+                  "value": "query",
+                  "type": "string"
+                },
+                {
+                  "key": "value",
+                  "value": "{{vault:apiKey}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/current.json?q={{countryName}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "current.json"
+              ],
+              "query": [
+                {
+                  "key": "q",
+                  "value": "{{countryName}}"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Forecast Weather",
+      "item": [
+        {
+          "name": "Forecast For A specific Hour",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {\r",
+                  "    pm.response.to.have.status(200);\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"Body matches string\", function () {\r",
+                  "    pm.expect(pm.response.json().location.name).to.eql(\"Cairo\");\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"Body matches string\", function () {\r",
+                  "    pm.expect(pm.response.json().forecast).to.exist;\r",
+                  "});\r",
+                  "pm.test(\"Body matches string\", function () {\r",
+                  "    pm.expect(pm.response.json().forecast.forecastday.length).to.eql(1);\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"Body matches string\", function () {\r",
+                  "    pm.expect(pm.response.json().forecast.forecastday[0].date).to.eql(\"2026-04-25\");\r",
+                  "});\r",
+                  "pm.test(\"Body matches string\", function () {\r",
+                  "    pm.expect(pm.response.json().forecast.forecastday[0].hour[0].time).to.contain(\"15:00\");\r",
+                  "});\r",
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "key",
+                  "type": "string"
+                },
+                {
+                  "key": "in",
+                  "value": "query",
+                  "type": "string"
+                },
+                {
+                  "key": "value",
+                  "value": "{{vault:apiKey}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/forecast.json?q=cairo&dt=2026-04-25&hour=15",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "forecast.json"
+              ],
+              "query": [
+                {
+                  "key": "q",
+                  "value": "cairo"
+                },
+                {
+                  "key": "dt",
+                  "value": "2026-04-25"
+                },
+                {
+                  "key": "hour",
+                  "value": "15"
+                }
+              ]
+            },
+            "description": "To run this request using Collection Runner, attach the CSV data file provided named \"Cities\""
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Forecast Weather Collection Runner",
+      "item": [
+        {
+          "name": "Forecast Collection Runner",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {\r",
+                  "    pm.response.to.have.status(200);\r",
+                  "});\r",
+                  "let city=pm.iterationData.get(\"city\");\r",
+                  "pm.test(\"Body matches string\", function () {\r",
+                  "    pm.expect(pm.response.json().location.name).to.eql(city);\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"Body matches string\", function () {\r",
+                  "    pm.expect(pm.response.json().forecast).to.exist;\r",
+                  "});\r",
+                  "pm.test(\"Body matches string\", function () {\r",
+                  "    pm.expect(pm.response.json().forecast.forecastday.length).to.eql(14);\r",
+                  "});\r",
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "key",
+                  "type": "string"
+                },
+                {
+                  "key": "in",
+                  "value": "query",
+                  "type": "string"
+                },
+                {
+                  "key": "value",
+                  "value": "{{vault:apiKey}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/forecast.json?q={{city}}&days={{maxForecastDays}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "forecast.json"
+              ],
+              "query": [
+                {
+                  "key": "q",
+                  "value": "{{city}}"
+                },
+                {
+                  "key": "days",
+                  "value": "{{maxForecastDays}}"
+                }
+              ]
+            },
+            "description": "To run this request using Collection Runner, attach the CSV data file provided named \"Cities\""
+          },
+          "response": []
+        },
+        {
+          "name": "Forecast For A specific Hour Collection Runner",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {\r",
+                  "    pm.response.to.have.status(200);\r",
+                  "});\r",
+                  "let city=pm.iterationData.get(\"city\");\r",
+                  "pm.test(\"Body matches string\", function () {\r",
+                  "    pm.expect(pm.response.json().location.name).to.eql(city);\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"Body matches string\", function () {\r",
+                  "    pm.expect(pm.response.json().forecast).to.exist;\r",
+                  "});\r",
+                  "pm.test(\"Body matches string\", function () {\r",
+                  "    pm.expect(pm.response.json().forecast.forecastday.length).to.eql(1);\r",
+                  "});\r",
+                  "let date=pm.iterationData.get(\"date\");\r",
+                  "pm.test(\"Body matches string\", function () {\r",
+                  "    pm.expect(pm.response.json().forecast.forecastday[0].date).to.eql(date);\r",
+                  "});\r",
+                  "let hour=pm.iterationData.get(\"hour\");\r",
+                  "pm.test(\"Body matches string\", function () {\r",
+                  "    pm.expect(pm.response.json().forecast.forecastday[0].hour[0].time).to.contain(hour);\r",
+                  "});\r",
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "key",
+                  "type": "string"
+                },
+                {
+                  "key": "in",
+                  "value": "query",
+                  "type": "string"
+                },
+                {
+                  "key": "value",
+                  "value": "{{vault:apiKey}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/forecast.json?q={{city}}&dt={{date}}&hour={{hour}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "forecast.json"
+              ],
+              "query": [
+                {
+                  "key": "q",
+                  "value": "{{city}}"
+                },
+                {
+                  "key": "dt",
+                  "value": "{{date}}"
+                },
+                {
+                  "key": "hour",
+                  "value": "{{hour}}"
+                }
+              ]
+            },
+            "description": "To run this request using Collection Runner, attach the CSV data file provided named \"Cities\""
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Current Weather Collection Runner",
+      "item": [
+        {
+          "name": "City Collection Runner",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "let timezone = pm.iterationData.get(\"timezone\");\r",
+                  "\r",
+                  "pm.test(\"Status code is 200\", function () {\r",
+                  "    pm.response.to.have.status(200);\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"Body matches string\", function () {\r",
+                  "    pm.expect(pm.response.json().location.tz_id).to.eql(timezone);\r",
+                  "});\r",
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "key",
+                  "type": "string"
+                },
+                {
+                  "key": "in",
+                  "value": "query",
+                  "type": "string"
+                },
+                {
+                  "key": "value",
+                  "value": "{{vault:apiKey}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/current.json?q={{city}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "current.json"
+              ],
+              "query": [
+                {
+                  "key": "q",
+                  "value": "{{city}}"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Coordinates Collection Runner",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "let timezone = pm.iterationData.get(\"timezone\");\r",
+                  "\r",
+                  "pm.test(\"Status code is 200\", function () {\r",
+                  "    pm.response.to.have.status(200);\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"Body matches string\", function () {\r",
+                  "    pm.expect(pm.response.json().location.tz_id).to.eql(timezone);\r",
+                  "});\r",
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "key",
+                  "type": "string"
+                },
+                {
+                  "key": "in",
+                  "value": "query",
+                  "type": "string"
+                },
+                {
+                  "key": "value",
+                  "value": "{{vault:apiKey}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/current.json?q={{coordinates}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "current.json"
+              ],
+              "query": [
+                {
+                  "key": "q",
+                  "value": "{{coordinates}}"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Metar Code Collection Runner",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "let timezone = pm.iterationData.get(\"timezone\");\r",
+                  "\r",
+                  "pm.test(\"Status code is 200\", function () {\r",
+                  "    pm.response.to.have.status(200);\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"Body matches string\", function () {\r",
+                  "    pm.expect(pm.response.json().location.tz_id).to.eql(timezone);\r",
+                  "});\r",
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "key",
+                  "type": "string"
+                },
+                {
+                  "key": "in",
+                  "value": "query",
+                  "type": "string"
+                },
+                {
+                  "key": "value",
+                  "value": "{{vault:apiKey}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/current.json?q=metar:{{metar}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "current.json"
+              ],
+              "query": [
+                {
+                  "key": "q",
+                  "value": "metar:{{metar}}"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Iata Code Collection Runner",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "let timezone = pm.iterationData.get(\"timezone\");\r",
+                  "\r",
+                  "pm.test(\"Status code is 200\", function () {\r",
+                  "    pm.response.to.have.status(200);\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"Body matches string\", function () {\r",
+                  "    pm.expect(pm.response.json().location.tz_id).to.eql(timezone);\r",
+                  "});\r",
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "key",
+                  "type": "string"
+                },
+                {
+                  "key": "in",
+                  "value": "query",
+                  "type": "string"
+                },
+                {
+                  "key": "value",
+                  "value": "{{vault:apiKey}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/current.json?q={{iata}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "current.json"
+              ],
+              "query": [
+                {
+                  "key": "q",
+                  "value": "{{iata}}"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Country Collection Runner",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "let timezone = pm.iterationData.get(\"timezone\");\r",
+                  "\r",
+                  "pm.test(\"Status code is 200\", function () {\r",
+                  "    pm.response.to.have.status(200);\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"Body matches string\", function () {\r",
+                  "    pm.expect(pm.response.json().location.tz_id).to.eql(timezone);\r",
+                  "});\r",
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "key",
+                  "type": "string"
+                },
+                {
+                  "key": "in",
+                  "value": "query",
+                  "type": "string"
+                },
+                {
+                  "key": "value",
+                  "value": "{{vault:apiKey}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/current.json?q={{country}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "current.json"
+              ],
+              "query": [
+                {
+                  "key": "q",
+                  "value": "{{country}}"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://api.weatherapi.com/v1"
+    },
+    {
+      "key": "cityName",
+      "value": "Vienna"
+    },
+    {
+      "key": "coords",
+      "value": "48.2081,16.3713"
+    },
+    {
+      "key": "zipCode",
+      "value": "1010,VI"
+    },
+    {
+      "key": "metarCode",
+      "value": "metar:LOWW"
+    },
+    {
+      "key": "iataCode",
+      "value": "VIE"
+    },
+    {
+      "key": "ipAddress",
+      "value": "213.208.157.36"
+    },
+    {
+      "key": "tz_id",
+      "value": "Europe/Vienna"
+    },
+    {
+      "key": "regionName",
+      "value": "wien,vienna"
+    },
+    {
+      "key": "countryName",
+      "value": "Austria"
+    },
+    {
+      "key": "maxForecastDays",
+      "value": "14"
+    }
+  ]
+}
