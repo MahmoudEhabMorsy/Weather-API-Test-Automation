@@ -1,0 +1,23 @@
+name: Automated API Tests
+on: [push]
+
+jobs:
+  test-api:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Install Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install Newman
+        run: npm install -g newman
+
+      - name: Run Weather API Tests
+        run: |
+          newman run WeatherApi.json \
+          --env-var "vault:apiKey=${{ secrets.WEATHER_API_KEY }}" \
+          --env-var "baseUrl=http://api.weatherapi.com/v1"
