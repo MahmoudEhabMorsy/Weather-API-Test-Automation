@@ -19,9 +19,7 @@ jobs:
       - name: Run Weather API Tests
         run: |
           newman run WeatherApi.json \
-          -d Cities.csv \
-          --env-var "vault:apiKey=${{ secrets.WEATHER_API_KEY }}" \
-          --env-var "baseUrl=http://api.weatherapi.com/v1" \
-          --env-var "maxForecastDays=14"
+          --iteration-data Cities.csv \
+          --iteration-count 3 \
           --env-var "vault:apiKey=${{ secrets.WEATHER_API_KEY }}" \
           --env-var "baseUrl=http://api.weatherapi.com/v1"
