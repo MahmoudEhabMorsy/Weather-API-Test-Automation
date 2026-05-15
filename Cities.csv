@@ -1,0 +1,48 @@
+city,date,hour,coordinates,metar,iata,timezone,country
+Cairo,2026-05-16,1.0,"30.0444,31.2357",HECA,CAI,Africa/Cairo,Egypt
+Alexandria,2026-05-17,2.0,"31.2001,29.9187",HEAX,ALY,Africa/Cairo,Egypt
+Dubai,2026-05-18,3.0,"25.2048,55.2708",OMDB,DXB,Asia/Dubai,United Arab Emirates
+Riyadh,2026-05-19,4.0,"24.7136,46.6753",OERK,RUH,Asia/Riyadh,Saudi Arabia
+Doha,2026-05-20,5.0,"25.2854,51.5310",OTBD,DOH,Asia/Qatar,Qatar
+Istanbul,2026-05-21,6.0,"41.0082,28.9784",LTFJ,IST,Europe/Istanbul,Turkey
+Paris,2026-05-22,7.0,"48.8566,2.3522",LFPG,CDG,Europe/Paris,France
+London,2026-05-23,8.0,"51.5074,-0.1278",EGLL,LHR,Europe/London,UK
+Berlin,2026-05-24,9.0,"52.5200,13.4050",EDDB,BER,Europe/Berlin,Germany
+Madrid,2026-05-25,10.0,"40.4168,-3.7038",LEMD,MAD,Europe/Madrid,Spain
+Rome,2026-05-26,11.0,"41.9028,12.4964",LIRF,FCO,Europe/Rome,Italy
+Amsterdam,2026-05-27,12.0,"52.3676,4.9041",EHAM,AMS,Europe/Amsterdam,Netherlands
+Brussels,2026-05-28,13.0,"50.8503,4.3517",EBBR,BRU,Europe/Brussels,Belgium
+Vienna,2026-05-29,14.0,"48.2082,16.3738",LOWW,VIE,Europe/Vienna,Austria
+Zurich,2026-05-30,15.0,"47.3769,8.5417",LSZH,ZRH,Europe/Zurich,Switzerland
+Moscow,2026-05-31,16.0,"55.7558,37.6173",UUEE,SVO,Europe/Moscow,Russia
+New York,2026-06-01,17.0,"40.7128,-74.0060",KJFK,JFK,America/New_York,USA
+Toronto,2026-06-02,20.0,"43.6532,-79.3832",CYYZ,YYZ,America/Toronto,Canada
+Mexico City,2026-06-03,22.0,"19.4326,-99.1332",MMMX,MEX,America/Mexico_City,Mexico
+Sao Paulo,2026-06-04,23.0,"-23.5505,-46.6333",SBGR,GRU,America/Sao_Paulo,Brazil
+Buenos Aires,2026-06-05,1.0,"-34.6037,-58.3816",SAEZ,EZE,America/Argentina/Buenos_Aires,Argentina
+Santiago,2026-06-06,2.0,"-33.4489,-70.6693",SCEL,SCL,America/Santiago,Chile
+Tokyo,2026-06-07,4.0,"35.6762,139.6503",RJTT,HND,Asia/Tokyo,Japan
+Seoul,2026-06-08,6.0,"37.5665,126.9780",RKSI,ICN,Asia/Seoul,South Korea
+Beijing,2026-06-09,7.0,"39.9042,116.4074",ZBAA,PEK,Asia/Shanghai,China
+Shanghai,2026-06-10,8.0,"31.2304,121.4737",ZSPD,PVG,Asia/Shanghai,China
+Hong Kong,2026-06-11,9.0,"22.3193,114.1694",VHHH,HKG,Asia/Hong_Kong,Hong Kong
+Singapore,2026-06-12,10.0,"1.3521,103.8198",WSSS,SIN,Asia/Singapore,Singapore
+Bangkok,2026-06-13,11.0,"13.7563,100.5018",VTBS,BKK,Asia/Bangkok,Thailand
+Kuala Lumpur,2026-06-14,12.0,"3.1390,101.6869",WMKK,KUL,Asia/Kuala_Lumpur,Malaysia
+Jakarta,2026-06-15,13.0,"-6.2088,106.8456",WIII,CGK,Asia/Jakarta,Indonesia
+Mumbai,2026-06-16,15.0,"19.0760,72.8777",VABB,BOM,Asia/Kolkata,India
+Bangalore,2026-06-17,16.0,"12.9716,77.5946",VOBL,BLR,Asia/Kolkata,India
+Sydney,2026-06-18,17.0,"-33.8688,151.2093",YSSY,SYD,Australia/Sydney,Australia
+Auckland,2026-06-19,19.0,"-36.8485,174.7633",NZAA,AKL,Pacific/Auckland,New Zealand
+Cape Town,2026-06-20,20.0,"-33.9249,18.4241",FACT,CPT,Africa/Johannesburg,South Africa
+Nairobi,2026-06-21,22.0,"-1.2921,36.8219",HKJK,NBO,Africa/Nairobi,Kenya
+Lagos,2026-06-22,23.0,"6.5244,3.3792",DNMM,LOS,Africa/Lagos,Nigeria
+Casablanca,2026-06-23,0.0,"33.5731,-7.5898",GMMN,CMN,Africa/Casablanca,Morocco
+Tunis,2026-06-24,1.0,"36.8065,10.1815",DTTA,TUN,Africa/Tunis,Tunisia
+Athens,2026-06-25,2.0,"37.9838,23.7275",LGAV,ATH,Europe/Athens,Greece
+,2026-06-26,,,,,,
+,2026-06-27,,,,,,
+,2026-06-28,,,,,,
+,2026-06-29,,,,,,
+,2026-06-30,,,,,,
+,2026-07-01,,,,,,
