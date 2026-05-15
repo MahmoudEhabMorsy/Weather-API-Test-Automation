@@ -1,10 +1,10 @@
 {
   "info": {
-    "_postman_id": "10f3a870-ab2b-4a44-a0a7-da8b0dad3c75",
+    "_postman_id": "b5dad284-a578-4f68-8002-e819c488dfb5",
     "name": "Task 4",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
     "_exporter_id": "50452057",
-    "_collection_link": "https://go.postman.co/collection/50452057-10f3a870-ab2b-4a44-a0a7-da8b0dad3c75?source=collection_link"
+    "_collection_link": "https://go.postman.co/collection/50452057-b5dad284-a578-4f68-8002-e819c488dfb5?source=collection_link"
   },
   "item": [
     {
@@ -33,6 +33,9 @@
               }
             }
           ],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
           "request": {
             "auth": {
               "type": "apikey",
@@ -61,6 +64,15 @@
                 "value": "application/json"
               }
             ],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
             "url": {
               "raw": "{{baseUrl}}/current.json?q={{cityName}}",
               "host": [
@@ -500,6 +512,7 @@
                   "pm.test(\"Body matches string\", function () {\r",
                   "    pm.expect(pm.response.json().location.name).to.eql(\"Cairo\");\r",
                   "});\r",
+                  "const todayDate = new Date().toISOString().split('T')[0];\r",
                   "\r",
                   "pm.test(\"Body matches string\", function () {\r",
                   "    pm.expect(pm.response.json().forecast).to.exist;\r",
@@ -509,7 +522,7 @@
                   "});\r",
                   "\r",
                   "pm.test(\"Body matches string\", function () {\r",
-                  "    pm.expect(pm.response.json().forecast.forecastday[0].date).to.eql(\"2026-04-25\");\r",
+                  "    pm.expect(pm.response.json().forecast.forecastday[0].date).to.eql(todayDate);\r",
                   "});\r",
                   "pm.test(\"Body matches string\", function () {\r",
                   "    pm.expect(pm.response.json().forecast.forecastday[0].hour[0].time).to.contain(\"15:00\");\r",
@@ -546,7 +559,7 @@
             "method": "GET",
             "header": [],
             "url": {
-              "raw": "{{baseUrl}}/forecast.json?q=cairo&dt=2026-04-25&hour=15",
+              "raw": "{{baseUrl}}/forecast.json?q=cairo&dt={{todayDate}}&hour=15",
               "host": [
                 "{{baseUrl}}"
               ],
@@ -560,7 +573,7 @@
                 },
                 {
                   "key": "dt",
-                  "value": "2026-04-25"
+                  "value": "{{todayDate}}"
                 },
                 {
                   "key": "hour",
